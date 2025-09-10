@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+
+
+body{
+    font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.btn{
+    @apply px-3 py-2 flex items-center justify-center border border-gray-300 rounded hover:bg-gray-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-600;
+}
+
+.btn-sm{
+    @apply px-2 py-1.5 flex items-center justify-center border border-gray-300 rounded hover:bg-gray-200 text-sm cursor-pointer;
+}
+
+.btn-search{
+    @apply pl-9 pr-3 py-2 text-sm placeholder-gray-400 text-gray-600 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600;
+}
+
+.custom-input{
+    @apply py-1 px-2 text-center border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600;
+}
+
+.custom-input-disabled{
+    @apply py-1 px-2 text-center border border-gray-300 bg-gray-100 rounded;
+}
+
+.custom-header{
+    @apply px-8 py-3 flex justify-between items-center border-b border-gray-200
+}
+
+.header-title{
+  @apply flex text-lg h-10 items-center;   
+}
+
+h1{
+    @apply text-3xl font-semibold py-4;
+}
+
+.custom-textarea{
+    @apply flex-1 w-full px-3 py-2 rounded-lg bg-gray-100 text-gray-600 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent max-w-full hover:border-gray-300  placeholder-gray-400 resize-y;
+}
+
+.custom-label{
+    @apply w-32 font-semibold py-2
+}
