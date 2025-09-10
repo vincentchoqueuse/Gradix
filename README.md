@@ -27,7 +27,7 @@ A scoresheet app for teachers to evaluate students.
 2. Install dependencies:
 
    ```bash
-   cd gradix-sveltekit
+   cd gradix
    npm install
    ```
 
