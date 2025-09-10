@@ -61,7 +61,7 @@
     updateQuestion(studentQuestion);
   }
 
-  function changeQuestion() {
+  function changeQuestionScore() {
     dispatch("onScoreChanged");
   }
 

@@ -19,6 +19,7 @@
     <div
       class="bg-indigo-500 h-2 rounded-full transition-all duration-300"
       style:width={`${percentage}%`}
-    />
+    >
+    </div>
   </div>
 </div>
