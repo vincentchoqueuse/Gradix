@@ -1,6 +1,10 @@
 # Gradix
 
-A scoresheet app for teachers to evaluate students.
+A frontend scoresheet app for teachers to evaluate students
+
+## Demo (No Backend)
+
+- https://gradix.ovh
 
 ## Features
 
