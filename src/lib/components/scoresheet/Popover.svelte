@@ -5,8 +5,7 @@
   let showPopover = $state(false);
   let popoverRef = $state(null);
   let buttonRef = $state(null);
-
-  const isDisabled = !(content.length > 0);
+  let isDisabled = $derived((content?.length == 0));
 
   $effect(() => {
     if (isDisabled) return; 
@@ -27,6 +26,7 @@
 
 
 <div bind:this={buttonRef} class="relative inline-block">
+
   <button
     class="btn w-10"
     class:opacity-50={isDisabled}

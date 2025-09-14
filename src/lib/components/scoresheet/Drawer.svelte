@@ -41,6 +41,7 @@
       });
       const data = await res.json();
       studentQuestion.comment = data.response;
+      changeQuestionComment();
     } catch (err) {
       console.error("Impossible de contacter Ollama");
     } finally {
@@ -54,7 +55,7 @@
     studentQuestion.label = label;
     studentQuestion.color = color;
     if (comment !== undefined) studentQuestion.comment = comment;
-    onScoreChanged();
+    dispatch("scoreChanged");
   }
 
   function changeQuestionComment() {
@@ -62,7 +63,7 @@
   }
 
   function changeQuestionScore() {
-    dispatch("onScoreChanged");
+    dispatch("scoreChanged");
   }
 
   function close() {
@@ -203,6 +204,7 @@
         <h3 class="py-4 w-1/2">Scoresheet Comparison ({comparison.length})</h3>
         <SearchInput bind:value={search} placeholder="Find Student..." class="w-64" bgColor="bg-gray-100" />
       </div>
+  
       <div class="space-y-1 border rounded border-gray-300 p-2 max-h-48 overflow-y-auto">
         {#each comparison as c}
           <div class="grid grid-cols-2 items-center gap-2 py-1 px-2 text-sm">
