@@ -16,10 +16,10 @@
 
   <!-- Progress bar -->
   <div class="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-    <div
-      class="bg-indigo-500 h-2 rounded-full transition-all duration-300"
-      style:width={`${percentage}%`}
-    >
-    </div>
+    {#if current === total}
+      <div class="h-2 rounded-full duration-300 bg-black" style="width: {percentage}%;"></div>
+    {:else}
+      <div class="bg-yellow-500 h-2 rounded-full duration-300" style="width: {percentage}%;"></div>
+    {/if}
   </div>
 </div>

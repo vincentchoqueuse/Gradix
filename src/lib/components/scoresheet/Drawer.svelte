@@ -130,7 +130,7 @@
   </div>
 
   <!-- Content -->
-  <div class="overflow-y-auto h-[calc(100%-64px)] py-4 px-8 space-y-6">
+  <div class="overflow-y-auto h-[calc(100%-64px)] py-4 px-8 space-y-4">
     <!-- Feedback -->
     <div>
       <div class="flex items-center justify-between gap-4 py-1">
@@ -172,20 +172,18 @@
             </Popover>
           </div>
         </div>
-        <div class="space-y-1 border rounded border-gray-300 p-2">
+        <div class="space-y-1 border rounded border-gray-300 p-2 max-h-64 overflow-y-auto">
           {#each criterion.levelIds.map(id => scoresheetState.levels[id]) as level}
-            <div class="grid grid-cols-2 items-center gap-2 py-1 px-2 text-sm">
-              <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 py-1 px-2 text-sm">
+              <div class="flex items-center gap-2 flex-1">
                 <Indicator color={level.color} />
-                <span class="text-gray-700">{level.label}</span>
+                <div class="text-gray-700 text-truncate">{level.label}</div>
               </div>
-              <div class="flex items-center gap-2 justify-self-end">
-                <span class="text-gray-500">
+              <div class="flex text-xs flex-1 px-2 text-gray-500 w-full">{level.text}</div>
+              <div class="flex items-center gap-2 justify-end ml-auto w-32">
+                <span class="text-gray-500 px-2">
                   {level.weight * question.maxScore} pts
                 </span>
-                <Popover content={level.text} trigger="click">
-                    <EllipsisVertical class="h-5 w-4" />
-                </Popover>
                 <button
                   class="btn w-10"
                   onclick={() => applyLevel(level.label, level.color, level.weight*question.maxScore)}
@@ -207,17 +205,14 @@
   
       <div class="space-y-1 border rounded border-gray-300 p-2 max-h-48 overflow-y-auto">
         {#each comparison as c}
-          <div class="grid grid-cols-2 items-center gap-2 py-1 px-2 text-sm">
-            <!-- Colonne gauche -->
-            <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2 py-1 px-2 text-sm">
+            <div class="flex items-center gap-2 flex-1">
               <Indicator color={c.color} />
               <span class="text-gray-700">{c.studentName}</span>
             </div>
-            <div class="flex items-center gap-2 justify-self-end">
+            <div class="flex text-xs flex-1 px-2 text-gray-500 w-full">{c.comment}</div>
+            <div class="flex items-center gap-2 justify-end ml-auto w-32">
               <span class="text-gray-500">{c.score} pts</span>
-              <Popover content={c.comment} trigger="click">
-                  <EllipsisVertical class="h-5 w-4" />
-              </Popover>
               <button
                     class="btn w-10"
                     onclick={() => applyLevel(c.label, c.color, c.score, c.comment)}

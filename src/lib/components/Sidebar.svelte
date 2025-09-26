@@ -64,7 +64,9 @@
       </div>
       <div class="flex justify-end">
         {#if !sheet.date}
-        <TriangleAlert class="h-4" />
+        <span
+          class="inline-block w-2 h-2 rounded-full shrink-0 bg-yellow-500 "
+          ></span>
         {/if}
       </div>
     </a>

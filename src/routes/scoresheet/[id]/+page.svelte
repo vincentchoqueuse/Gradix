@@ -45,9 +45,6 @@
     function changeSheetComment(){
         updateScoresheet(sheet, false); 
     }
-
-
-
 </script>
 
 {#if sheet}
@@ -68,11 +65,6 @@
         </div>
         <div class="ml-auto flex gap-2">
             <ProgressIndicator current={questionStats.completed} total={questionStats.total} label="Question" />
-            {#if questionStats.completed != questionStats.total }
-                <span class="px-3 py-1 flex items-center justify-center border border-gray-300 rounded w-26 text-xs gap-2">
-                    <TriangleAlert class="w-4" /> review
-                </span>
-            {/if}
             <button class="btn" onclick={changeSheetCurrentDateTime} >
                 <Stamp class="h-5" />
             </button>

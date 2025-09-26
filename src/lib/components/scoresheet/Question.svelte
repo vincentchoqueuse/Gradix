@@ -31,13 +31,17 @@
 
 <div class="flex items-center justify-between gap-2 py-2">
 
-  <h3>Question {question.name} </h3>
+  <h3 class="w-32">Question {question.name} </h3>
 
-  <div class="px-4 text-gray-400 max-w-lg break-words">{studentQuestion.comment}</div>
-  <div class="ml-auto flex gap-2">
+  <div class="px-2 text-gray-400 w-96">
+    <div class="break-words whitespace-normal">
+      {studentQuestion.comment}
+    </div>
+  </div>
+  <div class="ml-auto flex items-center  gap-2">
     {#if !studentQuestion.label}
-    <span class="px-3 py-1 flex items-center justify-center border border-gray-300 rounded w-26 text-xs gap-2">
-      <TriangleAlert class="w-4" /> review
+    <span class="px-1 h-5 flex items-center justify-center rounded px-3 text-xs text-white bg-yellow-500">
+      review
     </span>
     {/if}
     
@@ -71,7 +75,7 @@
       oninput={changeQuestion}
       class="w-18 custom-input"
     />
-    <span class="px-3 py-1 flex items-center justify-center w-12 text-gray-400">/{question.maxScore}</span>
+    <span class="px-3 py-1 flex items-center w-12 text-gray-400">/{question.maxScore}</span>
   </div>
 </div>
 
